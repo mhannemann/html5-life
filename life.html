@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Life</title>
+<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="html5-life.js"></script>
+</head>
+<body>
+<h1>Life in HTML5</h1>
+<p>No frameworks, no plugins -- just a sliver of HTML and <a href="html5-life.js">a page or two of javascript</a>.
+Inspired by <a href="http://diveintohtml5.org/canvas.html">Mark Pilgrim</a> and <a href="http://hakim.se/experiments/">Hakim El Hattab</a>.</p>
+
+<div id="patternName"></div>
+<br>
+
+<canvas id='world'></canvas>
+
+<p id="steps">Steps: <span id="itercount">0</span></p>
+
+<p id="log">Log: <div id="logdata"></div></p>
+
+<hr width="50%">
+<p>Written by Michael Hannemann:  <i>&lt;lastname&gt;@pobox.com</i></p>
+
+<script>
+  initGame(document.getElementById('world'));
+</script>
+</body>
+</html>
