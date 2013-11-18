@@ -204,7 +204,7 @@ function createData1() {
     board[5][52] = board[6][52] = board[5][53] = 1;
     board[6][54] = board[7][54] = board[8][54] = board[8][55] = 1;
 
-    return "Gosper Glider Gun (plus an Eater)";
+    return "<a href=\"http://www.argentum.freeserve.co.uk/lex_g.htm#gosperglidergun\" target=\"_blank\">Gosper Glider Gun</a> (plus an Eater)";
 }
 
 function createData2() {
@@ -251,8 +251,22 @@ function createData5() {
     board[30][32] = board[30][33] = board[30][34] = 1;
     board[26][36] = board[27][36] = board[28][36] = 1;
     board[28][33] = board[28][34] = board[27][34] = 1;
-    return "Lidka - a Methuselah";
+    return "<a href=\"http://www.conwaylife.com/wiki/index.php?title=Lidka\" target=\"_blank\">Lidka</a> - a <a href=\"http://www.conwaylife.com/wiki/Methuselah\" target=\"_blank\">Methuselah</a>";
 }
+
+function createData6() {
+    /* "Queen Bee Shuttle" -- http://www.conwaylife.com/wiki/Queen_bee_shuttle */
+    board = getCurrentBoard();
+    // blocking boxes
+    board[2][20] = board[2][21] = board[3][20] = board[3][21] = 1;
+    board[22][20] = board[22][21] = board[23][20] = board[23][21] = 1;
+    // shuttle -- front, mid, back
+    board[7][20] = board[8][19] = board[9][18] = board[8][21] = board[9][22] = 1;
+    board[10][20] = board[10][21] = board[10][19] = 1;
+    board[11][18] = board[11][17] = board[11][22] = board[11][23] = 1;
+    return "<a href=\"http://www.conwaylife.com/wiki/Queen_bee_shuttle\" target=\"_blank\">Queen Bee Shuttle</a>"
+}
+
 
 function randomBoardInit() {
     board = getCurrentBoard();
@@ -268,7 +282,7 @@ function createData() {
     // Let's do known patterns sometimes, and random slightly less than half.
     // Oh, except let's also prefer the glider gun more often than not.
 
-    var choice = Math.floor(Math.random() * 11);
+    var choice = Math.floor(Math.random() * 12);
     var name;
     switch (choice) {
     case 0: 
@@ -288,6 +302,9 @@ function createData() {
 	break;
     case 7:
 	name = createData5();
+	break;
+    case 8:
+	name = createData6();
 	break;
     default:
 	name = randomBoardInit();
